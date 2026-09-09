@@ -346,11 +346,15 @@ button, input, textarea, select {
 
 /* Mobile Navigation Drawer */
 @media (max-width: 1024px) {
+  body.mobile-menu-open {
+    overflow: hidden;
+  }
+
   .nav-links {
     position: fixed;
     top: 80px;
-    right: -100%;
-    width: 280px;
+    right: -100vw;
+    width: min(84vw, 320px);
     height: calc(100vh - 80px);
     background: var(--bg-card);
     border-left: 1px solid var(--border-gold);
@@ -360,6 +364,8 @@ button, input, textarea, select {
     gap: 1.25rem;
     transition: var(--transition);
     box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+    z-index: 1100;
+    overflow-y: auto;
   }
 
   .nav-links.open {
@@ -368,6 +374,17 @@ button, input, textarea, select {
 
   .hamburger {
     display: block;
+    position: relative;
+    z-index: 1101;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    top: 70px;
+    height: calc(100vh - 70px);
+    width: min(88vw, 320px);
+    padding: 1.5rem 1.25rem;
   }
 }
 

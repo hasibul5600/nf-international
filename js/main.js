@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
       const isOpen = navLinks.classList.toggle('open');
       hamburger.setAttribute('aria-expanded', isOpen);
+      navLinks.setAttribute('aria-hidden', !isOpen);
+      document.body.classList.toggle('mobile-menu-open', isOpen);
       hamburger.querySelector('i')?.classList.toggle('fa-bars', !isOpen);
       hamburger.querySelector('i')?.classList.toggle('fa-xmark', isOpen);
     });
@@ -29,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
       if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
         navLinks.classList.remove('open');
+        navLinks.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('mobile-menu-open');
         hamburger.querySelector('i')?.classList.add('fa-bars');
         hamburger.querySelector('i')?.classList.remove('fa-xmark');
       }
@@ -37,6 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('open');
+        navLinks.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('mobile-menu-open');
         hamburger.querySelector('i')?.classList.add('fa-bars');
         hamburger.querySelector('i')?.classList.remove('fa-xmark');
       });
