@@ -1,4 +1,7 @@
 /* MongoDB data layer for N.F International. */
+// Netlify's Node 18 Function runtime does not always expose Web Crypto globally.
+// Mongoose uses it while generating ObjectIds, so provide Node's built-in implementation.
+if (!globalThis.crypto) globalThis.crypto = require('crypto').webcrypto;
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const dns = require('dns');
