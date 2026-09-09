@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="goldGradFav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE07D"/>
+      <stop offset="45%" stop-color="#C9A227"/>
+      <stop offset="70%" stop-color="#DAA520"/>
+      <stop offset="100%" stop-color="#997010"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100" height="100" rx="20" fill="#0B111E"/>
+  
+  <g transform="translate(-5, -5) scale(1.1)">
+    <!-- Globe Body -->
+    <circle cx="50" cy="50" r="34" fill="#0F172A" stroke="url(#goldGradFav)" stroke-width="2.5"/>
+    <ellipse cx="50" cy="50" rx="34" ry="14" fill="none" stroke="url(#goldGradFav)" stroke-width="1.5" opacity="0.75"/>
+    <ellipse cx="50" cy="50" rx="14" ry="34" fill="none" stroke="url(#goldGradFav)" stroke-width="1.5" opacity="0.75"/>
+    <line x1="16" y1="50" x2="84" y2="50" stroke="url(#goldGradFav)" stroke-width="1.5" opacity="0.85"/>
+    <line x1="50" y1="16" x2="50" y2="84" stroke="url(#goldGradFav)" stroke-width="1.5" opacity="0.85"/>
+
+    <!-- Orbital Orbit -->
+    <path d="M 12 68 Q 32 15, 84 28" fill="none" stroke="url(#goldGradFav)" stroke-width="2.8" stroke-dasharray="4,3"/>
+
+    <!-- Airplane -->
+    <g transform="translate(80, 24) rotate(22) scale(0.75)">
+      <path d="M 0 0 L -18 -8 L -14 -2 L -26 -5 L -24 -1 L -12 2 L -18 10 L -13 9 Z" fill="url(#goldGradFav)"/>
+    </g>
+  </g>
+</svg>

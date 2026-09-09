@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 120" width="520" height="120">
+  <defs>
+    <!-- Gold Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE07D"/>
+      <stop offset="45%" stop-color="#C9A227"/>
+      <stop offset="70%" stop-color="#DAA520"/>
+      <stop offset="100%" stop-color="#997010"/>
+    </linearGradient>
+
+    <!-- Silver/White Gradient -->
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#CBD5E1"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- EMBLEM GROUP (Globe & Airplane) -->
+  <g transform="translate(10, 5)">
+    <!-- Globe Body -->
+    <circle cx="55" cy="55" r="46" fill="#0B111E" stroke="url(#goldGrad)" stroke-width="3"/>
+    <ellipse cx="55" cy="55" rx="46" ry="20" fill="none" stroke="url(#goldGrad)" stroke-width="1.8" opacity="0.75"/>
+    <ellipse cx="55" cy="55" rx="20" ry="46" fill="none" stroke="url(#goldGrad)" stroke-width="1.8" opacity="0.75"/>
+    <line x1="9" y1="55" x2="101" y2="55" stroke="url(#goldGrad)" stroke-width="2" opacity="0.85"/>
+    <line x1="55" y1="9" x2="55" y2="101" stroke="url(#goldGrad)" stroke-width="2" opacity="0.85"/>
+
+    <!-- Orbital Flight Path Swoosh -->
+    <path d="M 10 75 Q 35 15, 100 32" fill="none" stroke="url(#goldGrad)" stroke-width="3.5" stroke-dasharray="6,4" opacity="0.9"/>
+    <path d="M 8 78 Q 38 12, 104 30" fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.5"/>
+
+    <!-- Gold Airplane Silhouette on Orbit -->
+    <g transform="translate(94, 26) rotate(22) scale(0.95)" filter="url(#goldGlow)">
+      <path d="M 0 0 L -18 -8 L -14 -2 L -26 -5 L -24 -1 L -12 2 L -18 10 L -13 9 Z" fill="url(#goldGrad)"/>
+    </g>
+
+    <!-- Center Accent Nodes -->
+    <circle cx="45" cy="40" r="3" fill="url(#goldGrad)"/>
+    <circle cx="68" cy="48" r="2.5" fill="url(#goldGrad)"/>
+    <circle cx="52" cy="68" r="3" fill="url(#goldGrad)"/>
+  </g>
+
+  <!-- TEXT GROUP -->
+  <!-- "N.F" Bold Silver/White Text -->
+  <text x="135" y="62" font-family="'Montserrat', 'Arial Black', sans-serif" font-size="52" font-weight="900" letter-spacing="2" fill="url(#silverGrad)">N.F</text>
+
+  <!-- "INTERNATIONAL" Gold Subtitle -->
+  <text x="245" y="62" font-family="'Montserrat', 'Arial Black', sans-serif" font-size="38" font-weight="800" letter-spacing="4" fill="url(#goldGrad)">INTERNATIONAL</text>
+
+  <!-- Tagline Banner -->
+  <line x1="135" y1="78" x2="510" y2="78" stroke="url(#goldGrad)" stroke-width="2.5" opacity="0.8"/>
+  <text x="135" y="96" font-family="'Inter', 'Segoe UI', sans-serif" font-size="13.5" font-weight="700" letter-spacing="3" fill="#E2E8F0" opacity="0.95">OVERSEAS MANPOWER RECRUITMENT AGENCY</text>
+  
+  <circle cx="505" cy="92" r="2" fill="url(#goldGrad)"/>
+</svg>

@@ -1,0 +1,26 @@
+{
+  "name": "nf-international",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node --watch server/server.js",
+    "test": "node --check server/server.js && node --check server/database.js && node --check js/main.js && node --check admin/admin.js"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongodb": "^7.6.0",
+    "mongoose": "^9.9.5",
+    "serverless-http": "^4.0.0",
+    "sqlite3": "^6.0.1"
+  }
+}
