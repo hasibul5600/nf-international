@@ -1614,3 +1614,22 @@ textarea.form-control {
     background: var(--bg-card-hover);
   }
 }
+
+/* Compact mobile header layout */
+@media (max-width: 600px) {
+  .navbar {
+    height: 70px;
+  }
+
+  .brand-logo-img {
+    height: 42px;
+  }
+
+  .nav-cta {
+    margin-left: auto;
+  }
+
+  .nav-cta .btn-apply-modal {
+    display: none;
+  }
+}
