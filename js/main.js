@@ -3,6 +3,10 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  const navCta = document.querySelector('.nav-cta[aria-busy="true"]');
+  navCta?.querySelector('.hamburger-skeleton')?.remove();
+  navCta?.removeAttribute('aria-busy');
+
   // 1. Sticky Header Navigation Effect
   const siteHeader = document.querySelector('.site-header');
   window.addEventListener('scroll', () => {
@@ -145,7 +149,14 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Submitting Application...`;
 
     try {
-      const payload = Object.fromEntries(new FormData(modalForm).entries());
+      const formData = new FormData(modalForm);
+      const payload = {
+        job_title: formData.get('job_title') || modalJobTitleInput?.value || 'General Overseas Application',
+        applicant_name: (formData.get('applicant_name') || modalForm.querySelector('#applicantName')?.value || '').toString().trim(),
+        applicant_phone: (formData.get('applicant_phone') || modalForm.querySelector('#applicantPhone')?.value || '').toString().trim(),
+        passport_status: formData.get('passport_status') || modalForm.querySelector('#applicantPassport')?.value || '',
+        experience: formData.get('experience') || modalForm.querySelector('#applicantExp')?.value || ''
+      };
       const response = await fetch('/api/apply', {
         method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
       });
@@ -174,7 +185,13 @@ document.addEventListener('DOMContentLoaded', () => {
     submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Sending Message...`;
 
     try {
-      const payload = Object.fromEntries(new FormData(contactForm).entries());
+      const formData = new FormData(contactForm);
+      const payload = {
+        name: (formData.get('name') || contactForm.querySelector('#contactName')?.value || '').toString().trim(),
+        email: (formData.get('email') || contactForm.querySelector('#contactEmail')?.value || '').toString().trim(),
+        phone: (formData.get('phone') || contactForm.querySelector('#contactPhone')?.value || '').toString().trim(),
+        message: (formData.get('message') || contactForm.querySelector('#contactMessage')?.value || '').toString().trim()
+      };
       const response = await fetch('/api/contact', {
         method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)
       });

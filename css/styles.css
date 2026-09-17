@@ -1575,3 +1575,42 @@ textarea.form-control {
     padding: 1.5rem;
   }
 }
+
+/* Mobile Navigation Loading Skeleton */
+.hamburger-skeleton {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .nav-cta[aria-busy="true"] .hamburger {
+    display: none;
+  }
+
+  .hamburger-skeleton {
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0;
+    background: linear-gradient(90deg, var(--bg-surface) 25%, var(--bg-card-hover) 50%, var(--bg-surface) 75%);
+    background-size: 200% 100%;
+    animation: hamburger-skeleton-shimmer 1.5s linear infinite;
+  }
+}
+
+@keyframes hamburger-skeleton-shimmer {
+  from {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hamburger-skeleton {
+    animation: none;
+    background: var(--bg-card-hover);
+  }
+}

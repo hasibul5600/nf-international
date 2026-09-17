@@ -73,10 +73,11 @@ Trusted Overseas Recruitment & Manpower Solutions
           <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <div class="nav-cta">
+        <div class="nav-cta" aria-busy="true">
           <button class="btn btn-primary btn-apply-modal">
             <i class="fa-solid fa-paper-plane"></i> Apply Now
           </button>
+          <span class="hamburger-skeleton" aria-hidden="true" role="presentation"></span>
           <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
             <i class="fa-solid fa-bars"></i>
           </button>
@@ -605,22 +606,22 @@ Trusted Overseas Recruitment & Manpower Solutions
             <form id="contactForm">
               <div class="form-group">
                 <label for="contactName">Full Name *</label>
-                <input type="text" id="contactName" class="form-control" placeholder="e.g. Md. Tanvir Ahmed" required>
+                <input type="text" id="contactName" name="name" class="form-control" placeholder="e.g. Md. Tanvir Ahmed" required>
               </div>
 
               <div class="form-group">
                 <label for="contactEmail">Email Address *</label>
-                <input type="email" id="contactEmail" class="form-control" placeholder="name@example.com" required>
+                <input type="email" id="contactEmail" name="email" class="form-control" placeholder="name@example.com" required>
               </div>
 
               <div class="form-group">
                 <label for="contactPhone">Phone Number *</label>
-                <input type="tel" id="contactPhone" class="form-control" placeholder="018XXXXXXXX" required>
+                <input type="tel" id="contactPhone" name="phone" class="form-control" placeholder="018XXXXXXXX" required>
               </div>
 
               <div class="form-group">
                 <label for="contactMessage">Message / Inquiry *</label>
-                <textarea id="contactMessage" class="form-control" placeholder="Tell us about your background or manpower requirements..." required></textarea>
+                <textarea id="contactMessage" name="message" class="form-control" placeholder="Tell us about your background or manpower requirements..." required></textarea>
               </div>
 
               <button type="submit" class="btn btn-primary" style="width: 100%;">
@@ -733,22 +734,22 @@ Trusted Overseas Recruitment & Manpower Solutions
       <form id="jobApplyForm">
         <div class="form-group">
           <label for="modalJobTitle">Applying Position</label>
-          <input type="text" id="modalJobTitle" class="form-control" readonly style="background: rgba(255,255,255,0.03); border-color: var(--border-gold);">
+          <input type="text" id="modalJobTitle" name="job_title" class="form-control" readonly style="background: rgba(255,255,255,0.03); border-color: var(--border-gold);">
         </div>
 
         <div class="form-group">
           <label for="applicantName">Full Name *</label>
-          <input type="text" id="applicantName" class="form-control" placeholder="e.g. Md. Kamal Hossain" required>
+          <input type="text" id="applicantName" name="applicant_name" class="form-control" placeholder="e.g. Md. Kamal Hossain" required>
         </div>
 
         <div class="form-group">
           <label for="applicantPhone">Phone / WhatsApp Number *</label>
-          <input type="tel" id="applicantPhone" class="form-control" placeholder="018XXXXXXXX" required>
+          <input type="tel" id="applicantPhone" name="applicant_phone" class="form-control" placeholder="018XXXXXXXX" required>
         </div>
 
         <div class="form-group">
           <label for="applicantPassport">Passport Status *</label>
-          <select id="applicantPassport" class="form-control" required>
+          <select id="applicantPassport" name="passport_status" class="form-control" required>
             <option value="valid">Valid Passport Ready</option>
             <option value="processing">Passport Under Processing</option>
             <option value="needed">Will Apply Soon</option>
@@ -757,7 +758,7 @@ Trusted Overseas Recruitment & Manpower Solutions
 
         <div class="form-group">
           <label for="applicantExp">Years of Experience</label>
-          <select id="applicantExp" class="form-control">
+          <select id="applicantExp" name="experience" class="form-control">
             <option value="fresh">Fresh Candidate / No Overseas Experience</option>
             <option value="1-3">1 - 3 Years Local Experience</option>
             <option value="3-5">3 - 5 Years (Gulf/Local Experience)</option>
